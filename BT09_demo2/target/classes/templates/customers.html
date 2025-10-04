@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head><title th:text="${title}"></title></head>
+<body>
+    <h1 th:text="${message}"></h1>
+    <div sec:authorize="hasRole('ADMIN')">Only Admin sees this!</div>
+    <a th:href="@{/logout}">Logout</a>
+</body>
+</html>
